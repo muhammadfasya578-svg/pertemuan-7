@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import FilterInventaris from '@/components/FilterInventaris';
 
-export default function HalamanInventarisLab(daftarBarangAwal) {
+export default function HalamanInventarisLab() {
     const [daftarBarang, setDaftarBarang] = useState([]);
     const [loading, setLoading] = useState(true);
     const [kondisiDipilih, setKondisiDipilih] = useState('Semua');
@@ -114,7 +114,6 @@ export default function HalamanInventarisLab(daftarBarangAwal) {
             <FilterInventaris
                 kondisiDipilih={kondisiDipilih}
                 setKondisiDipilih={setKondisiDipilih}
-                daftarBarangAwal={daftarBarangAwal}
             />
 
             {loading ? <p>⏳ Sedang mengambil data dari REST API...</p> : (

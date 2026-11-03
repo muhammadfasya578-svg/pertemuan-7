@@ -1,8 +1,6 @@
 'use client';
 
-// const daftarKategori = ['Semua', 'Baik', 'Perlu Cek', 'Rusak'];
-
-const daftarKategori = ['Semua', ...new Set(daftarBarangAwal.map((b) => b.kategori))];
+const daftarKategori = ['Semua', 'Baik', 'Perlu Cek', 'Rusak'];
 
 export default function FilterInventaris({ kondisiDipilih, setKondisiDipilih }) {
     return (
