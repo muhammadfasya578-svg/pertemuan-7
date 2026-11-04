@@ -1,26 +1,29 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Tema terang (default) */
+:root,
+[data-tema='terang'] {
+  --latar: #ffffff;
+  --kartu: #f8fafc;
+  --teks: #0f172a;
+  --garis: #cbd5e1;
+}
+
+/* Tema gelap: harus ditulis SETELAH tema terang */
+[data-tema='gelap'] {
+  --latar: #0f172a;
+  --kartu: #1e293b;
+  --teks: #f1f5f9;
+  --garis: #334155;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--latar);
+  color: var(--teks);
   font-family: Arial, Helvetica, sans-serif;
 }

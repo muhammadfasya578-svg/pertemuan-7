@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
+import { TemaProvider } from '@/context/TemaContext';
+import TombolTema from '@/components/TombolTema';
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +24,12 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <TemaProvider>
+          {children}
+          <TombolTema />
+        </TemaProvider>
+      </body>
     </html>
   );
 }

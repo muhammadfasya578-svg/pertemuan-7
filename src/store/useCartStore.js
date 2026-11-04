@@ -44,13 +44,12 @@ export const useCartStore = create(
 
       pakaiVoucher: (kode) => {
         if (kode.trim().toUpperCase() === "TAKUMIHEBAT") {
-          set({ diskonPersen: 20 }); // 3. benar
+          set({ diskonPersen: 20 });
           return true;
-
-          set({ diskonPersen: 0 }); // 3. salah
-          return false;
         }
-      }
+        set({ diskonPersen: 0 });
+        return false;
+      },
     }),
     {
       name: 'penyimpanan-keranjang-takumi', // Nama kunci otomatis di localStorage!
